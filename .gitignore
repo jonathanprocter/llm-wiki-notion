@@ -1,0 +1,23 @@
+# Environment variables — never commit your tokens
+.env
+.env.local
+
+# Notion page ID mapping (auto-generated, machine-specific)
+.notion_page_map.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.cursor/
+.vscode/
+*.swp
