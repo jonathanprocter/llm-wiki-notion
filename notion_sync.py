@@ -238,7 +238,7 @@ def create_notion_page(client: Client, parent_id: str, title: str, blocks: list,
     # Append remaining blocks in batches
     for batch_start in range(100, len(blocks), 100):
         batch = blocks[batch_start:batch_start + 100]
-        client.blocks.children.append(page_id=page_id, children=batch)
+        client.blocks.children.append(block_id=page_id, children=batch)
 
     return page_id
 
@@ -261,7 +261,7 @@ def update_notion_page(client: Client, page_id: str, title: str, blocks: list, m
     # Append new blocks in batches of 100
     for batch_start in range(0, len(blocks), 100):
         batch = blocks[batch_start:batch_start + 100]
-        client.blocks.children.append(page_id=page_id, children=batch)
+        client.blocks.children.append(block_id=page_id, children=batch)
 
 
 def sync_file(client: Client, md_file: Path, parent_id: str, page_map: dict) -> tuple[str, str]:
